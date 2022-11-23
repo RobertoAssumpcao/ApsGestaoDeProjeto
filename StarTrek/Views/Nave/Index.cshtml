@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Nave>
+
+@{
+    ViewData["Title"] = "Lista de Naves";
+}
+
+<div class="container-fluid">
+    <div class="row pt-4 pb-3 text-light">
+        <div class="col-6">
+            <h1>Lista de Naves</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Nave" asp-action="Adicionar" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Adicionar
+            </a>
+        </div>
+    </div>
+</div>
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Afiliação</th>
+            <th>Classe</th>
+            <th>Data de Lançamento</th>
+            <th>Registro</th>
+            <th>Status</th>
+            <th>Propulsão</th>
+            <th>Armamento</th>
+            <th>Defesa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <th>@obj.Nome</th>
+                <td>@obj.Afiliacao</td>
+                <td>@obj.Classe</td>
+                <td>@obj.DataLancamento</td>
+                <td>@obj.Registro</td>
+                <td>@obj.Status</td>
+                <td>@obj.Propulsao</td>
+                <td>@obj.Armamento</td>
+                <td>@obj.Defesa</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-warning mx-1" asp-controller="Nave" asp-action="Editar" asp-route-id="@obj.Id">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a class="btn btn-danger mx-1" asp-controller="Nave" asp-action="Deletar" asp-route-id="@obj.Id">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

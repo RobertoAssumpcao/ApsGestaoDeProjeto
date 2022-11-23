@@ -1,0 +1,59 @@
+﻿@model Nave
+@{
+    ViewData["Title"] = "Naves";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4 adicionarNave">
+        <div class="row pb-2">
+            <h1>Adicionar Nave</h1>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Nome"></label>
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Afiliacao"></label>
+            <input asp-for="Afiliacao" class="form-control" />
+            <span asp-validation-for="Afiliacao" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Classe"></label>
+            <input asp-for="Classe" class="form-control" />
+            <span asp-validation-for="Classe" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="DataLancamento"></label>
+            <input asp-for="DataLancamento" class="form-control" />
+            <span asp-validation-for="DataLancamento" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Registro"></label>
+            <input asp-for="Registro" class="form-control" />
+            <span asp-validation-for="Registro" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Status"></label>
+            <input asp-for="Status" class="form-control" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Propulsao"></label>
+            <input asp-for="Propulsao" class="form-control" />
+            <span asp-validation-for="Propulsao" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Armamento"></label>
+            <input asp-for="Armamento" class="form-control" />
+            <span asp-validation-for="Armamento" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Defesa"></label>
+            <input asp-for="Defesa" class="form-control" />
+            <span asp-validation-for="Defesa" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a asp-controller="Nave" asp-action="Index" class="btn btn-light">Voltar</a>
+    </div>
+</form>
