@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Funcionario>
+
+@{
+    ViewData["Title"] = "Lista de Funcionarios";
+}
+
+<div class="container-fluid">
+    <div class="row pt-4 pb-3 text-light">
+        <div class="col-6">
+            <h1>Lista de Funcionarios</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Funcionario" asp-action="Adicionar" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i>
+                Adicionar
+            </a>
+        </div>
+    </div>
+</div>
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
+            <th>Profissão</th>
+            <th>Email</th>
+            <th>Data de Nascimento</th>
+            <th>CPF</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <th>@obj.NomePessoa</th>
+                <td>@obj.Endereco</td>
+                <td>@obj.Telefone</td>
+                <td>@obj.Profissao</td>
+                <td>@obj.Email</td>
+                <td>@obj.DataNascimento</td>
+                <td>@obj.CPF</td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-warning mx-1" asp-controller="Funcionario" asp-action="Editar" asp-route-id="@obj.Id">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a class="btn btn-danger mx-1" asp-controller="Funcionario" asp-action="Deletar" asp-route-id="@obj.Id">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@model Funcionario
+@{
+    ViewData["Title"] = "Funcionarios";
+}
+
+<form method="post" asp-action="DeletarPost">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4 excluirNave">
+        <div class="row pb-2">
+            <h1>Excluir Funcionario</h1>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="NomePessoa">Nome</label>
+            <input asp-for="NomePessoa" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Endereco">Endereço</label>
+            <input asp-for="Endereco" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Telefone"></label>
+            <input asp-for="Telefone" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Profissao">Profissão</label>
+            <input asp-for="Profissao" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Email"></label>
+            <input asp-for="Email" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="DataNascimento">Data de Nascimento</label>
+            <input asp-for="DataNascimento" type="date" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="CPF"></label>
+            <input asp-for="CPF" disabled class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-controller="Funcionario" asp-action="Index" class="btn btn-light">Voltar</a>
+    </div>
+</form>

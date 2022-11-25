@@ -11,5 +11,5 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
-    public DbSet<Nave> Naves { get; set; }
+    public DbSet<Funcionario> Funcionarios { get; set; }
 }

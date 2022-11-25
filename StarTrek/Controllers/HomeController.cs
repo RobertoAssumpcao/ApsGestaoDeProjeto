@@ -16,7 +16,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        IEnumerable<Nave> objNaveList = _db.Naves.ToList();
+        IEnumerable<Funcionario> objNaveList = _db.Funcionarios.ToList();
         return View(objNaveList);
     }
 

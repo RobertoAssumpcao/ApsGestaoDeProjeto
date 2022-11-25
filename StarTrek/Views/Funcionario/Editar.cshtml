@@ -1,0 +1,49 @@
+﻿@model Funcionario
+@{
+    ViewData["Title"] = "Funcionarios";
+}
+
+<form method="post" asp-action="Editar">
+    <div class="border p-3 mt-4 editarNave">
+        <div class="row pb-2">
+            <h1>Editar cadastro pessoa</h1>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="NomePessoa">Nome</label>
+            <input asp-for="NomePessoa" class="form-control" />
+            <span asp-validation-for="NomePessoa" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Endereco">Endereço</label>
+            <input asp-for="Endereco" class="form-control" />
+            <span asp-validation-for="Endereco" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Telefone"></label>
+            <input asp-for="Telefone" ValidationExpression="/^[0-9]{2}-([0-9]{8}|[0-9]{9})/" name="telefone" title="Digite um telefone no formato: (xx)xxxxxxxxx" class="form-control" />
+            <span asp-validation-for="Telefone" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Profissao">Profissão</label>
+            <input asp-for="Profissao" class="form-control" />
+            <span asp-validation-for="Profissao" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="DataNascimento">Data de Nascimento</label>
+            <input asp-for="DataNascimento" type="date" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="text-light mb-1" asp-for="CPF"></label>
+            <input asp-for="CPF" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" class="form-control" />
+            <span asp-validation-for="CPF" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a asp-controller="Funcionario" asp-action="Index" class="btn btn-light">Voltar</a>
+    </div>
+</form>

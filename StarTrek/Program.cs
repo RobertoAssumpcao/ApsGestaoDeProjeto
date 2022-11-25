@@ -37,7 +37,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Nave}/{action=Index}/{id?}");
+    pattern: "{controller=Funcionario}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
